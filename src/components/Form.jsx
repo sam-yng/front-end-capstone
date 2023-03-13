@@ -1,25 +1,33 @@
 import React from "react";
 import '../css/index.css'
 import { useState } from "react";
-import AvailableTimes from "../utils/AvailableTimes";
-import Button from "./Button";
 
 const Form = () => {
     const [date, setDate] = useState("")
-    const [time, setTime] = useState("")
     const [guests, setGuests] = useState("")
     const [occasion, setOccasion] = useState("")
+    // const [time, setTime] = useState("")
+
+    const times = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"]
+
+    const [availableTimes, setAvtime] = useState('')
+
+    const Time = () => {
+        const freeTimes = times.map(times => {
+            return <option key={times.toString()}>{times}</option>
+        })
+        return freeTimes
+    }
 
     const clearForm = () => {
         setDate("")
-        setTime("")
+        setAvtime("")
         setGuests("")
         setOccasion("")
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(time)
         clearForm();
     };
 
@@ -40,10 +48,10 @@ const Form = () => {
                 <label htmlFor="time" className="border-2">Choose time</label>
                 <select
                     id="time"
-                    value={time}
-                    onChange={(e) => { setTime(e.target.value) }}
+                    value={availableTimes}
+                    onChange={(e) => { setAvtime(e.target.value )} }
                 >
-                    <AvailableTimes />
+                    <Time />
                 </select>
                 <label htmlFor="guests" className="border-2">Number of guests</label>
                 <input
