@@ -1,17 +1,17 @@
 import React from "react";
 import Logo from "../assets/Logo.svg"
 import hamburger from '../assets/ham.svg'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, NavLink } from 'react-router-dom'
 
 const Nav = () => {
     return(
         <nav className="md:max-w-[65vw] md:pt-14 pt-8 m-auto  font-bold">
             <ul className="hidden flex-row justify-between items-center md:flex">
                 <li className="mr-10">
-                   <a href="/"><img src={Logo} alt='logo' width={175} /></a>
+                <a href="/"><img src={Logo} alt='logo' width={175} /></a>
                 </li>
                 <li>
-                    <a href="/">Home</a>
+                    <NavLink to="/">Home</NavLink>
                 </li>
                 <li>
                     <a href="/">About</a>
@@ -20,7 +20,7 @@ const Nav = () => {
                     <a href="/">Menu</a>
                 </li>
                 <li>
-                    <a href="/">Reservations</a>
+                    <NavLink to="/Reservations">Reservations</NavLink>
                 </li>
                 <li>
                     <a href="/">Order Online</a>

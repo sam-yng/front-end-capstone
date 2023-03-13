@@ -1,22 +1,21 @@
 import React from "react";
+import Main from "../components/Main";
+import '../css/index.css'
 import Nav from "../components/Nav";
 import Footer from "../components/Footer";
-import Specials from "../components/Specials";
-import Header from "../components/Header";
-import Testimonials from "../components/Testimonials"
-import About from "../components/About";
-import '../css/index.css'
+import Reservations from "./Reservations";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   return (
-    <>
+    <Router>
       <Nav />
-      <Header />
-      <Specials />
-      <Testimonials />
-      <About />
+      <Routes>
+          <Route path='/' element={<Main />} />
+          <Route path='/Reservations' element={<Reservations />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   );
 }
 
