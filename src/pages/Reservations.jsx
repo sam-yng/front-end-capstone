@@ -1,10 +1,11 @@
 import React from "react";
 import '../css/index.css'
+import Form from "../components/Form";
 
 const Reservations = () => {
     return(
         <>
-            <h1>hello</h1>
+            <Form />
         </>
     )
 }

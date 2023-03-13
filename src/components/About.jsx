@@ -1,6 +1,7 @@
 import React from "react";
 import '../css/index.css'
 import placeholder from "../assets/ayyy.jpg"
+import food from '../assets/restauranfood.jpg'
 
 const About = () => {
     return(
@@ -15,7 +16,7 @@ const About = () => {
                     ut labore et dolore magna aliqua.
                 </p>
             </div>
-            <img className="mt-8" alt="placeholder" width={350} src={placeholder} />
+            <img className="mt-8" alt="placeholder" width={300} src={food} />
         </article>
     )
 }
